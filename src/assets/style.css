@@ -1,0 +1,300 @@
+/* =========================================
+   1. GLOBAL RESET & NAV (Revised Dropdown)
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+body {
+  color: #333;
+  line-height: 1.6;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo svg {
+  height: 75px;
+  width: auto;
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+nav ul li {
+  margin-left: 25px;
+  position: relative;
+} /* position: relative is key here */
+
+nav ul li a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+
+/* DROPDOWN LOGIC - Hidden by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  top: 100%; /* Sits directly below the link */
+  left: 0;
+  z-index: 1001;
+  border-top: 3px solid #ffd700; /* Gold accent line */
+}
+
+/* Show dropdown only on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  text-transform: none; /* Keeps submenu text clean */
+  font-weight: 400;
+}
+
+.dropdown-content a:hover {
+  background-color: #f9f9f9;
+  color: #003366;
+}
+
+/* =========================================
+   2. HERO HEADERS (UNCHANGED)
+   ========================================= */
+header {
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: contain;
+}
+.hero-image,
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 26, 51, 0.75);
+  z-index: 1;
+}
+.hero-content {
+  z-index: 10;
+  padding: 0 20px;
+}
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff !important;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   3. HOME PAGE PILLARS (UNCHANGED)
+   ========================================= */
+#services {
+  padding: 80px 5%;
+  text-align: center;
+  background: #fdfdfd;
+}
+.pillar-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.pillar-summary {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.pillar-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+.pillar-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pillar-text {
+  padding: 25px;
+  text-align: left;
+}
+
+/* =========================================
+   4. MANAGEMENT PAGE MAGAZINE LAYOUT (UNCHANGED)
+   ========================================= */
+.report-section {
+  padding: 80px 10%;
+  background: #fff;
+}
+.report-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.report-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 80px;
+}
+.report-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.report-text {
+  flex: 1;
+}
+.report-text h2 {
+  font-size: 2.2rem;
+  color: #003366;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+.report-text p {
+  font-size: 1.1rem;
+  color: #555;
+}
+.report-visual {
+  flex: 1.1;
+}
+.video-thumbnail-wrapper {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+.row-video {
+  width: 100%;
+  display: block;
+}
+.learn-more-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #ffd700;
+  color: #003366;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+.learn-more-btn:hover {
+  background: #003366;
+  color: #ffffff;
+}
+
+/* =========================================
+   5. FOOTER (UNCHANGED)
+   ========================================= */
+.site-footer {
+  background: #001a33;
+  color: white;
+  padding: 70px 5% 30px;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-brand h3 {
+  color: #ffd700;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 12px;
+}
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.footer-links a:hover {
+  color: #ffd700;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  color: #bbbbbb;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+  .report-row,
+  .report-row:nth-child(even) {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .pillar-container,
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
