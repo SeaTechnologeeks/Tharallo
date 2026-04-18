@@ -8,8 +8,6 @@ const Management = () => {
       <Banner
         title="Management Consulting"
         description="Bridging the gap between operational reality and strategic vision."
-        buttonText=""
-        targetId="services"
         mediaSrc={bgVideo}
         isVideo={false}
       />

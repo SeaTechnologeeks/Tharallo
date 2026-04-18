@@ -8,8 +8,6 @@ const Technology = () => {
       <Banner
         title="Technology Consulting"
         description="Advancing enterprise logic through digital intelligence and engineering excellence."
-        buttonText=""
-        targetId="services"
         mediaSrc={bgVideo}
         isVideo={false}
       />

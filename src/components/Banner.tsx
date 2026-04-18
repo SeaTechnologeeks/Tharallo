@@ -3,15 +3,14 @@ import bgVideo from "../assets/videos/earth-bg.mp4";
 const Banner = ({
   title = "Solving the Enterprise Equation",
   description = "We apply rigorous logic and specialized engineering to navigate complex business landscapes across the continent.",
-  buttonText = "Explore Our Expertise",
-  targetId = "services",
+  // buttonText = "Explore Our Expertise",
   mediaSrc = bgVideo, // can be image OR video
   isVideo = true,
 }) => {
-  const handleScroll = () => {
-    const section = document.getElementById(targetId);
-    section?.scrollIntoView({ behavior: "smooth" });
-  };
+  // const handleScroll = () => {
+  //   const section = document.getElementById(targetId);
+  //   section?.scrollIntoView({ behavior: "smooth" });
+  // };
 
   return (
     <header className="hero">

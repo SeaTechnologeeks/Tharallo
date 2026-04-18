@@ -9,8 +9,6 @@ const Engineering = () => {
       <Banner
         title="Engineering Consulting"
         description="Structural logic and industrial precision for complex infrastructure and systems."
-        buttonText=""
-        targetId="services"
         mediaSrc={bgVideo}
         isVideo={false}
       />
